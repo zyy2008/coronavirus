@@ -17,3 +17,8 @@ npm run build
 ```
 npm run lint
 ```
+
+### Jsdoc
+```
+npm run docs
+```

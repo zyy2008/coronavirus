@@ -1,14 +1,15 @@
 {
-  "name": "hello-world",
+  "name": "project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "docs": ".jsdoc.js"
+    "docs": "jsdoc -d docs -c .jsdoc.js"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "element-ui": "^2.14.1",
     "vue": "^2.6.11",

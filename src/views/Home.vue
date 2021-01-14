@@ -1,18 +1,49 @@
 <template>
-  <div>
-    {{ message }}
-    <button @click="increment">+1</button>
-    <button @click="decrement">-1</button>
-    <button @click="showDialog(counter)">Show counter value in dialog</button>
-  </div>
+  <el-card>
+    <div slot="header">
+      <el-form :inline="true" :model="formInline">
+        <el-form-item label="location:">
+          <el-select
+            v-model="formInline.location"
+            placeholder="please select location"
+          >
+            <el-option
+              v-for="item in cityData"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            >
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="age:">
+          <div style="width: 300px">
+            <el-slider v-model="formInline.age" range :min="0" :max="100" />
+          </div>
+        </el-form-item>
+        <el-form-item label="health condition:">
+          <el-select
+            v-model="formInline.health"
+            placeholder="please select health"
+          >
+            <el-option label="health" value="health"></el-option>
+            <el-option label="general" value="general"></el-option>
+            <el-option label="poor" value="poor"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit">search</el-button>
+        </el-form-item>
+      </el-form>
+    </div>
+  </el-card>
 </template>
+
 
 <script>
 /**
- * @module better-components/BetterCounter
- * @desc BetterCounter component, like Counter component but better
- * @vue-prop {Number} initialCounter
- * @vue-prop {Number} [step=1] Step
+ * @module view/Home
+ * @desc Home component
  * @vue-data {Number} counter - Current counter's value
  * @vue-computed {Array.<String>} fooList - A list of foo
  * @vue-computed {Array.<String>} barList - A list of bar
@@ -20,19 +51,29 @@
  * @vue-event {Number} increment - Emit counter's value after increment
  * @vue-event {Number} decrement - Emit counter's value after decrement
  */
+
+import { getCity } from "@/api/home";
+
 export default {
+  name: "home",
   data() {
     return {
-      counter: 0,
-      step: 1,
+      formInline: {
+        location: "",
+        age: [18, 50],
+        health: "health",
+      },
+      cityData: [],
+      tableData: [],
     };
   },
-  computed: {
-    message() {
-      return `Counter: ${this.counter}`;
-    },
-  },
   methods: {
+    getCityData() {
+      getCity().then((res) => {
+        this.cityData = res;
+      });
+    },
+    onSubmit() {},
     /**
      * Increment counter and emit event 'increment'
      */

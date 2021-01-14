@@ -4,11 +4,10 @@ module.exports = {
   ],
   source: {
     include: [
+      'src/',
+      'src/views',
       'README.md',
     ],
-    includePattern: '\\.(vue|js)$',
-  },
-  opts: {
-    encoding: 'utf8',
+    includePattern: "\\.(vue|js)$"
   },
 };

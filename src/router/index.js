@@ -1,17 +1,39 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Main from "@/layout/AppMain";
 
 Vue.use(VueRouter)
 
 const routes = [{
-  path: '/',
-  name: 'Home',
-  component: Home
+  path: "/",
+  component: Main,
+  redirect: "/dashboard",
+  children: [{
+    path: "dashboard",
+    component: () =>
+      import("@/views/Home"),
+    name: "Dashboard",
+    meta: {
+      title: "Home",
+    }
+  }]
+}, {
+  path: "/covid",
+  component: Main,
+  redirect: "/covid",
+  children: [{
+    path: "/covid",
+    component: () =>
+      import("@/views/Covid"),
+    name: "Covid",
+    meta: {
+      title: "Covid-19",
+    }
+  }]
 }]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history', //hash history
   base: process.env.BASE_URL,
   routes
 })
