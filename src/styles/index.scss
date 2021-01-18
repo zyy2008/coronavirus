@@ -15,3 +15,7 @@ body {
     overflow: hidden;
     padding: 0;
 }
+
+.el-form--inline .el-form-item {
+    display: inline-flex !important;
+}

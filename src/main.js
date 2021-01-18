@@ -5,6 +5,13 @@ import '@/styles/index.scss'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+const echarts = require('echarts')
+
+require("echarts/theme/macarons");
+
+
+console.log(echarts)
+Vue.prototype.$echarts = echarts;
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false

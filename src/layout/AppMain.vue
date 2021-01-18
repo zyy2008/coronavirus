@@ -11,8 +11,8 @@
         active-text-color="#ffd04b"
         router
       >
-        <el-menu-item index="/dashboard">Home</el-menu-item>
-        <el-menu-item index="/covid">Covid-19</el-menu-item>
+        <el-menu-item index="/dashboard">Covid-19</el-menu-item>
+        <!-- <el-menu-item index="/covid">Covid-19</el-menu-item> -->
       </el-menu>
     </el-header>
     <el-main>
