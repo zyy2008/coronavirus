@@ -7,6 +7,7 @@ import router from './router'
 import store from './store'
 const echarts = require('echarts')
 require("echarts/theme/macarons");
+require("echarts/map/js/china");
 
 
 console.log(echarts)

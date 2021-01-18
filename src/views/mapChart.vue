@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import resize from "@/utils/resize";
 export default {
   name: "mapChart",
+  mixins: [resize],
   props: {
     className: {
       type: String,
