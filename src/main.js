@@ -6,7 +6,6 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 const echarts = require('echarts')
-
 require("echarts/theme/macarons");
 
 
