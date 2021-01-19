@@ -17,9 +17,7 @@
     </el-header>
     <el-main>
       <transition name="fade-transform" mode="out-in">
-        <el-scrollbar style="height: 100%">
-          <router-view />
-        </el-scrollbar>
+        <router-view />
       </transition>
     </el-main>
   </el-container>

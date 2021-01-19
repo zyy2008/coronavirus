@@ -10,7 +10,6 @@ require("echarts/theme/macarons");
 require("echarts/map/js/china");
 
 
-console.log(echarts)
 Vue.prototype.$echarts = echarts;
 Vue.use(ElementUI);
 

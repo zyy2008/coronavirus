@@ -36,11 +36,7 @@
         </el-form-item>
       </el-form>
     </div>
-    <el-row>
-      <el-col :span="12">
-        <map-chart />
-      </el-col>
-    </el-row>
+    <map-chart height="100%" />
   </el-card>
 </template>
 
@@ -120,3 +116,9 @@ export default {
   },
 };
 </script>
+
+<style style rel="stylesheet/scss" lang="scss" scoped>
+::v-deep .el-card__body {
+  height: calc(100vh - 200px);
+}
+</style>
